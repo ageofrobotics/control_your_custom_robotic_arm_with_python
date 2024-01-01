@@ -17,7 +17,7 @@ class MyRobot:
 
         #Initialize the moveit_commander and rospy node
         self._commander = moveit_commander.roscpp_initialize(sys.argv)
-        rospy.init_node('node_set_redefined_poses', anonymous=True)
+        rospy.init_node('node_set_redefined_pose', anonymous=True)
 
         
         #Instantiate a RobotCommander object. This object is the outer-level interface to the robot
