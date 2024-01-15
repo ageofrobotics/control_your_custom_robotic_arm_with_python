@@ -127,9 +127,11 @@ def main():
     #delete the arm object at the end of code
     del arm
     del hand
+	
 
 
 if __name__ == '__main__':
     main()
+
 
 
