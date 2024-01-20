@@ -47,8 +47,11 @@ class MyRobot:
         rospy.loginfo('\033[95m' + " >>> MyRobot initialization is done." + '\033[0m')
 
     def print_end_effector_pose(self):
-        #for moveit_commander member functions, please refer: https://docs.ros.org/en/jade/api/moveit_commander/html/classmoveit__commander_1_1move__group_1_1MoveGroupCommander.html
-        #Python file with function definitions: https://docs.ros.org/en/jade/api/moveit_commander/html/move__group_8py_source.html
+        #for moveit_commander member functions in Python 3 (For Noetic), please refer: https://docs.ros.org/en/noetic/api/moveit_commander/html/functions_func.html
+        #for moveit_commander member functions in Python 2, please refer(For Kinetic or Melodic): https://docs.ros.org/en/kinetic/api/moveit_commander/html/functions_func.html
+        #Python file with function definitions: https://github.com/ros-planning/moveit/blob/master/moveit_commander/src/moveit_commander/move_group.py
+        #Python file with function definitions (for Noetic): https://docs.ros.org/en/noetic/api/moveit_commander/html/move__group_8py_source.html
+        #Python file with function definitions (for Kinetic or Melodic): https://docs.ros.org/en/kinetic/api/moveit_commander/html/move__group_8py_source.html
         
         #Get the current position of end effector link
         pose_values = self._group.get_current_pose().pose
@@ -64,7 +67,8 @@ class MyRobot:
         #Covert the quaternion values to roll, pitch and yaw
         (roll, pitch, yaw) = euler_from_quaternion(quaternion_list)
         
-        #transformations documentation: https://docs.ros.org/en/jade/api/tf/html/python/transformations.html
+        #transformations documentation (For Noetic): https://docs.ros.org/en/noetic/api/tf2_ros/html/python/
+        #transformations documentation (For Kinetic or Melodic): https://docs.ros.org/en/melodic/api/tf/html/python/transformations.html
         
         #Print the values
         rospy.loginfo('\033[32m' + 
